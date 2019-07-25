@@ -1,0 +1,14 @@
+.count {
+    display: inline-block;
+    min-width: 80px;
+    text-align: center;
+}
+
+.ant-list {
+    background-color: #ffffff;
+}
+
+.ant-list-item {
+    padding-left: 20px;
+    padding-right: 20px;
+}

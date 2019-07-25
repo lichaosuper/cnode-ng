@@ -1,0 +1,7 @@
+<nz-layout>
+    <app-header></app-header>
+    <div *ngFor="let item of data">
+        <app-public-card [data]="item"></app-public-card>
+    </div>
+    <app-footer></app-footer>
+</nz-layout>

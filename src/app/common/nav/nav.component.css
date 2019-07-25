@@ -1,0 +1,10 @@
+.menu {
+    margin-top: 8px;
+}
+
+/* 路由激活样式 */
+
+.active {
+    border-bottom: 3px solid #3BA0E9;
+    color: #3BA0E9;
+}

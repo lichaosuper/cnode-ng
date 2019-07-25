@@ -1,0 +1,16 @@
+<nz-list [nzDataSource]="list" [nzItemLayout]="'horizontal'" [nzRenderItem]="item">
+    <ng-template #item let-item>
+        <nz-list-item [nzContent]="item.last_reply_at.split('T')[0]" >
+            <nz-list-item-meta [nzTitle]="nzTitle" nzAvatar="{{item.author.avatar_url}}">
+                <ng-template #nzTitle>
+                    <div class="count">{{item.reply_count}}/{{item.visit_count}}</div>
+                    <!-- 将item传给子组件app-txt-tag -->
+                    <app-txt-tag [data]="item"></app-txt-tag>
+                    <a [routerLink]="['/themedetail', item.id]">{{ item.title }}</a>
+                </ng-template>
+            </nz-list-item-meta>
+        </nz-list-item>
+    </ng-template>
+</nz-list>
+<!-- 分页 -->
+<nz-pagination [nzPageIndex]="currentPage" [nzTotal]="500" (nzPageIndexChange)="pageChange($event)"></nz-pagination>

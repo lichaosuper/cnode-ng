@@ -1,0 +1,14 @@
+.userWrap {
+    width: 90%;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+.avatar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.detail-item {
+    text-align: center;
+}

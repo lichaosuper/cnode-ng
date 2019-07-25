@@ -1,0 +1,23 @@
+.detail {
+    width: 90%;
+    background-color: #fff;
+    margin: 0 auto;
+}
+
+.detail-content {
+    margin: 20px 30px 20px 30px;
+}
+
+.top {
+    border-bottom: 1px solid #f2f4f6;
+}
+
+.title {
+    font-size: 30px;
+    font-size: 700;
+}
+
+.ul ul li {
+    display: inline-block;
+    margin-right: 30px;
+}

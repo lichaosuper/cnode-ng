@@ -1,0 +1,29 @@
+<nz-layout>
+    <app-header></app-header>
+    <nz-layout>
+        <nz-content>
+            <!-- 判断对象是否为空，不为空才渲染，这里用判断data.loginname是否存在来代替判空操作 -->
+            <div class="userWrap" *ngIf="data.loginname">
+                <nz-card nzTitle="个人主页" class="user-detail">
+                    <div class="avatar">
+                        <nz-avatar nzSrc="{{data.avatar_url}}"></nz-avatar>
+                    </div>
+                    <nz-row class="detail-item">
+                        <nz-col [nzMd]="8">
+                            用户名：<span>{{data.loginname}}</span>
+                        </nz-col>
+                        <nz-col [nzMd]="8">
+                            积分：<span>{{data.score}}</span>
+                        </nz-col>
+                        <nz-col [nzMd]="8">
+                            注册时间：<span>{{data.create_at}}</span>
+                        </nz-col>
+                    </nz-row>
+                </nz-card>
+                <app-user-list [topic]="'最近创建的话题'" [list]="data.recent_topics"></app-user-list>
+                <app-user-list [topic]="'最近回复的话题'" [list]="data.recent_replies"></app-user-list>
+            </div>
+        </nz-content>
+    </nz-layout>
+    <app-footer></app-footer>
+</nz-layout>

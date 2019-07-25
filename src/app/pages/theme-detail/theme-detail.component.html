@@ -1,0 +1,43 @@
+<nz-layout>
+    <app-header></app-header>
+    <nz-layout>
+        <nz-content class="detail">
+            <!-- 判断对象是否为空，不为空才渲染，这里用判断ataObj.title是否存在来代替判空操作 -->
+            <ng-container *ngIf="dataObj.title">
+                <div class="detail-content">
+                    <div class="top">
+                        <div>
+                            <app-txt-tag [data]="dataObj"></app-txt-tag>
+                            <span class="title">{{dataObj.title}}</span>
+                        </div>
+                        <div class="ul">
+                            <ul>
+                                <li>发布于：{{dataObj.create_at}}</li>
+                                <li>
+                                    <a
+                                        routerLink="/user/{{dataObj.author.loginname}}">作者：{{dataObj.author.loginname}}</a>
+                                </li>
+                                <li>{{dataObj.visit_count}}次浏览</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div [innerHTML]="dataObj.content"></div>
+                </div>
+                <nz-card nzTitle="{{dataObj.replies.length}}回复">
+                    <nz-list [nzDataSource]="dataObj.replies" [nzItemLayout]="'horizontal'" [nzRenderItem]="item">
+                        <ng-template #item let-item>
+                            <nz-list-item [nzContent]="item.ups.length">
+                                <nz-list-item-meta [nzTitle]="nzTitle" nzAvatar="{{item.author.avatar_url}}">
+                                    <ng-template #nzTitle>
+                                        <div [innerHTML]="item.content"></div>
+                                    </ng-template>
+                                </nz-list-item-meta>
+                            </nz-list-item>
+                        </ng-template>
+                    </nz-list>
+                </nz-card>
+            </ng-container>
+        </nz-content>
+    </nz-layout>
+    <app-footer></app-footer>
+</nz-layout>

@@ -1,0 +1,8 @@
+.menu {
+    text-align: center;
+}
+
+.active {
+    background-color: #e6f7ff;
+    border-right: 3px solid #3BA0E9;
+}
